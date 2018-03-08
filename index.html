@@ -7,39 +7,55 @@
 </head>
 
 <body>
-  		<div class="container">
-        <div class="front_page">
-      		<div class="title_div">
-          		<h1>The Kotkins</h1>
-      	   </div>
-           <div id="clockdiv">
-            <div>
-              <span class="days"></span>
-              <div class="smalltext">Days</div>
-            </div>
-            <div>
-              <span class="hours"></span>
-              <div class="smalltext">Hours</div>
-            </div>
-            <div>
-              <span class="minutes"></span>
-              <div class="smalltext">Minutes</div>
-            </div>
-            <div>
-              <span class="seconds"></span>
-              <div class="smalltext">Seconds</div>
-            </div>
-          </div>
+  <div class="container">
+    <div class="front_page">
+      <div class="title_div">
+        <h1>The Kotkins</h1>
+      </div>
+      <div id="clockdiv">
+        <div>
+          <span class="days"></span>
+          <div class="smalltext">Days</div>
         </div>
-  		</div>
-      <footer>
-          <ul>
-              <li><a href="mailto:wedding@thekotkins.com" class="a_footer"><i class="fa fa-envelope fa-lg"></i></a></li>
-              <br><br>
-              <li><small>&copy; 2018 The Kotkins. All rights reserved.</small></li>
-          </ul>
-          <script src="js/countdown.js"></script>
-      </footer>
-    </body>
+        <div>
+          <span class="hours"></span>
+          <div class="smalltext">Hours</div>
+        </div>
+        <div>
+          <span class="minutes"></span>
+          <div class="smalltext">Minutes</div>
+        </div>
+          <div>
+            <span class="seconds"></span>
+            <div class="smalltext">Seconds</div>
+          </div>
+      </div>
+    </div>
+    <div class="insta_div">
+      <div class="gallery row no-gutter" id="instafeed"></div>
+    </div>
+  </div>
+  <footer>
+    <ul>
+      <li><a href="mailto:wedding@thekotkins.com" class="a_footer"><i class="fa fa-envelope fa-lg"></i></a></li>
+      <br><br>
+      <li><small>&copy; 2018 The Kotkins. All rights reserved.</small></li>
+    </ul>
+    <script src="js/countdown.js"></script>
+    <script type="text/javascript" src="js/instafeed.js"></script>
+    <script type="text/javascript">
+      var feed = new Instafeed({
+          get: 'user',
+          userId: '7254184901',
+          resolution: 'standard_resolution',
+          accessToken: '7254184901.0398fea.9af6c47d706748bfb9a0f6a60902c91b',
+          template: '<div class="col-xs-12 col-sm-6 col-md-4"><a href="{{image}}"><div class="img-featured-container"><div class="img-backdrop"></div><div class="description-container"><p class="caption">{{caption}}</p><span class="likes"><i class="icon ion-heart"></i> {{likes}}</span><span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span></div><img src="{{image}}" class="img-responsive"></div></a></div>',
+          sortBy: 'random',
+          links: false
+      });
+      feed.run();
+    </script>
+  </footer>
+</body>
 
 </html>
